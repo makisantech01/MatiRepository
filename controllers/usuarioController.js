@@ -29,11 +29,11 @@ exports.getUsuarioById = async (req, res) => {
 
 // Crear un nuevo usuario
 exports.createUsuario = async (req, res) => {
-  const { nombre, edad, email, password } = req.body;
+  const { nombre, email, password } = req.body;
 
   try {
     // Verificar si los campos requeridos están presentes
-    if (!nombre || !edad || !email || !password) {
+    if (!nombre || !email || !password) {
       return res.status(400).json({ error: 'Faltan campos obligatorios' });
     }
 
@@ -41,7 +41,7 @@ exports.createUsuario = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Crear el usuario en la base de datos
-    const usuario = await Usuario.create({ nombre, edad, email, password: hashedPassword });
+    const usuario = await Usuario.create({ nombre, email, password: hashedPassword });
 
     res.status(201).json(usuario);
   } catch (error) {
@@ -53,11 +53,11 @@ exports.createUsuario = async (req, res) => {
 // Actualizar un usuario por su ID
 exports.updateUsuario = async (req, res) => {
   const { id } = req.params;
-  const { nombre, edad, email, password } = req.body;
+  const { nombre, email, password } = req.body;
 
   try {
     // Verificar si los campos requeridos están presentes
-    if (!nombre || !edad || !email || !password) {
+    if (!nombre || !email || !password) {
       return res.status(400).json({ error: 'Faltan campos obligatorios' });
     }
 
@@ -71,7 +71,6 @@ exports.updateUsuario = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     usuario.nombre = nombre;
-    usuario.edad = edad;
     usuario.email = email;
     usuario.password = hashedPassword;
     await usuario.save();

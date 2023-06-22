@@ -21,4 +21,8 @@ const Dentista = sequelize.define('Dentista', {
   }
 });
 
+Dentista.associate = (models) => {
+  Dentista.hasMany(models.Cita, { foreignKey: 'dentistaId' });
+};
+
 module.exports = Dentista;

@@ -46,6 +46,7 @@ exports.createCita = async (req, res) => {
   }
 };
 
+
 // Actualizar una cita por su ID
 exports.updateCita = async (req, res) => {
   const { id } = req.params;

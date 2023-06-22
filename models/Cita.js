@@ -32,4 +32,16 @@ const Cita = sequelize.define('Cita', {
   }
 });
 
+Cita.associate = (models) => {
+  Cita.belongsTo(models.Dentista, { foreignKey: 'dentistaId' });
+  Cita.belongsTo(models.Paciente, { foreignKey: 'pacienteId' });
+};
+
+Cita.beforeCreate(async (cita) => {
+  const paciente = await cita.getPaciente();
+  if (!paciente || !paciente.nombre || !paciente.dni) {
+    throw new Error('Autenticación requerida para reservar una cita');
+  }
+});
+
 module.exports = Cita;

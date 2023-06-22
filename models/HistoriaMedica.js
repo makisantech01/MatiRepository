@@ -20,4 +20,8 @@ const HistoriaMedica = sequelize.define('HistoriaMedica', {
   }
 });
 
+HistoriaMedica.associate = (models) => {
+  HistoriaMedica.belongsTo(models.Paciente, { foreignKey: 'pacienteId' });
+};
+
 module.exports = HistoriaMedica;

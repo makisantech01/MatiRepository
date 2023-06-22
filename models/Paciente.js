@@ -6,9 +6,10 @@ const Paciente = sequelize.define('Paciente', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  edad: {
-    type: DataTypes.INTEGER,
-    allowNull: false
+  dni: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true
   },
   email: {
     type: DataTypes.STRING,
@@ -22,7 +23,16 @@ const Paciente = sequelize.define('Paciente', {
   telefono: {
     type: DataTypes.STRING,
     allowNull: false
+  },
+  obraSocial: {
+    type: DataTypes.ENUM,
+    values: ["Particular", "OSDE", "Medifé", "Swiss Medical", "GALENO"],
   }
 });
+
+Paciente.associate = (models) => {
+  Paciente.hasMany(models.Cita, { foreignKey: 'pacienteId' });
+  Paciente.hasMany(models.HistoriaMedica, { foreignKey: 'pacienteId' });
+};
 
 module.exports = Paciente;

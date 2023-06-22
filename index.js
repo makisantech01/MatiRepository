@@ -6,6 +6,7 @@ const cita = require('./routes/citaRoutes')
 const dentista = require('./routes/dentistaRoutes');
 const historiaMedica = require('./routes/historiaMedicaRoutes');
 const paciente = require('./routes/pacienteRoutes');
+const auth = require('./routes/authRoutes');
 const cors = require('cors');
 
 const app = express();
@@ -22,6 +23,7 @@ app.use('/api/citas', cita);
 app.use('/api/dentistas', dentista);
 app.use('/api/hisotriasMedicas', historiaMedica);
 app.use('/api/pacientes',paciente);
+app.use('/api/auth',auth);
 
 
 
