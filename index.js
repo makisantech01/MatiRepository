@@ -7,6 +7,7 @@ const dentista = require('./routes/dentistaRoutes');
 const historiaMedica = require('./routes/historiaMedicaRoutes');
 const paciente = require('./routes/pacienteRoutes');
 const auth = require('./routes/authRoutes');
+const odonto = require('./routes/OdontograDienteRoutes');
 const cors = require('cors');
 
 const app = express();
@@ -24,8 +25,7 @@ app.use('/api/dentistas', dentista);
 app.use('/api/hisotriasMedicas', historiaMedica);
 app.use('/api/pacientes',paciente);
 app.use('/api/auth',auth);
-
-
+app.use('/api/odonto',odonto);
 
 
 app.listen(port, () => {
