@@ -1,0 +1,15 @@
+//   numero: { type: String, required: true, unique: true },
+//   posicionX: { type: Number, required: true },
+//   posicionY: { type: Number, required: true },
+//   caries: {
+//     centro: { type: Number, default: null },
+//     arriba: { type: Number, default: null },
+//     abajo: { type: Number, default: null },
+//     izquierda: { type: Number, default: null },
+//     derecha: { type: Number, default: null }
+//   },
+//   extraccion: { type: Number, default: null },
+//   corona: { type: Number, default: null },
+//   filtro: { type: Number, default: null },
+//   fractura: { type: Number, default: null }
+// });

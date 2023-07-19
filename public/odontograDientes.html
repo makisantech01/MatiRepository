@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OdontograDientes</title>
+  <style>
+    /* Estilos CSS para la grilla */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 10px;
+    }
+    
+    .grid-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>OdontograDientes</h1>
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <h2>Diente 1</h2>
+      <label>Cara 1:</label>
+      <select name="cara1">
+        <option value="Sano">Sano</option>
+        <option value="Caries">Caries</option>
+        <option value="Empaste">Empaste</option>
+        <option value="Extraído">Extraído</option>
+      </select>
+    </div>
+    <!-- Repite el bloque anterior para los demás dientes y caras -->
+    <div class="grid-item">
+      <h2>Diente 2</h2>
+      <label>Cara 1:</label>
+      <select name="cara1">
+        <option value="Sano">Sano</option>
+        <option value="Caries">Caries</option>
+        <option value="Empaste">Empaste</option>
+        <option value="Extraído">Extraído</option>
+      </select>
+      <!-- Repite las etiquetas select para las caras restantes -->
+    </div>
+  </div>
+
+  <button type="submit">Guardar cambios</button>
+</body>
+</html>
